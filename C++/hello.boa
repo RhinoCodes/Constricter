@@ -1,0 +1,2 @@
+string oof = "aaa"
+out "Hello, World! $oof"
