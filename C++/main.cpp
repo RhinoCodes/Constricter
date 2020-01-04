@@ -3,10 +3,24 @@
 #include <functional>
 #include <fstream>
 #include <vector>
-#include <regex>
 using namespace std;
-using std::regex_replace;
-using std::regex;
+
+void replaceAll(string& str, const string& from, const string& to) {
+    if(from.empty())
+        return;
+    string wsRet;
+    wsRet.reserve(str.length());
+    size_t start_pos = 0, pos;
+    while((pos = str.find(from, start_pos)) != string::npos) {
+        wsRet += str.substr(start_pos, pos - start_pos);
+        wsRet += to;
+        pos += from.length();
+        start_pos = pos;
+    }
+    wsRet += str.substr(start_pos);
+    str.swap(wsRet); // faster than str = wsRet;
+}
+
 struct token{
     int index = 0;
     string type = "";
@@ -33,7 +47,7 @@ struct variable{
 std::string evaluate_var(variable x, std::string text){
     string var_name = "$"+x.name;
     auto value = x.value;
-    cout << regex_replace(var_name, "$", value);
+    replaceAll(text,var_name,value);
     return text;
 }
 
@@ -42,10 +56,8 @@ void out(string text, string type, int index, vector<variable> env){
     text.erase(index,index2);
     text.erase(0,1);
     text.pop_back();
-    for(int i=0; i<text.length(); i++){
-        for(int i=0; i<env.size(); i++){
-            text = evaluate_var(env[i], text);
-            }
+    for(int i=0; i<env.size(); i++){
+        text = evaluate_var(env[i], text);
         }
         cout << text;
     }

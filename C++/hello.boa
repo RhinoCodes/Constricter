@@ -1,2 +1,2 @@
-string oof = "aaa"
-out "Hello, World! $oof"
+string oof = "Ethan Li from KANSAS AND CHINA"
+out "$oof is an idiot!!"
