@@ -5,6 +5,12 @@
   C++, &
   Java
   
+  
+ Example:
+   ```
+   string x = "Hi, "
+   out "$x Parker!"
+   ```
  Suggestions are welcome.
  Currently we only have an interpreter.
 
