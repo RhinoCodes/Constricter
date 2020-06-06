@@ -4,8 +4,8 @@
   Python,
   C++, &
   Java
-  
-  
+The end goal is to have an interpreter for easy testing and a compiler for sharing with their friends.  
+
  Example:
    ```
    string x = "Hi, "
@@ -14,6 +14,10 @@
    $ constricter hi.con
    Hi, Parker!
    ```
+   The `$(var)` is inspired by PHP.
+   The var type before name is inspired by 99% of languages.
+   The `out` is inspired by a StackOverflow Post
+   
  Suggestions are welcome.
  Currently we only have an interpreter.
 
