@@ -9,10 +9,10 @@ The end goal is to have an interpreter for easy testing and a compiler for shari
  Example:
    ```
    string x = "Hi, "
-   out "$x Parker!"
+   out "$x Person (or other life form)!"
    ---------
    $ constricter hi.con
-   Hi, Parker!
+   Hi, Person (or other life form)!
    ```
    The `$(var)` is inspired by PHP.
    The var type before name is inspired by 99% of languages.
